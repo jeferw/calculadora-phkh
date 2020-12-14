@@ -1,6 +1,96 @@
+:root {
+  --imput-color: #78909c;
+  --active-imput-color: #b7e024;
+  --valid-imput-color: #6fb416;
+  --invalid-imput-color: #da3633;
+}
+
+#index-banner {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
 .responsive {
-  /*width: 100%;
-  max-width: 1024px;*/
-  max-width: 100%;
+  width: 100%;
+  max-width: 1024px;
   height: auto;
+}
+
+.radio-box {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+}
+
+.radio-box label {
+  margin: 0 5px 0 5px;
+}
+
+.radio-label {
+  color: var(--imput-color);
+  font-size: 1.25rem;
+  cursor: text;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  width: 30%;
+  min-width: 150px;
+}
+
+input[type='number']:not(.browser-default) {
+  border-bottom: 1px solid var(--imput-color);
+  color: white;
+  font-size: 20px;
+  height: 3.3rem;
+}
+
+input[type='number']:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid var(--active-imput-color);
+  box-shadow: 0 1px 0 0 var(--active-imput-color);
+}
+
+input[type='number']:not(.browser-default):focus:not([readonly]) + label {
+  color: var(--active-imput-color);
+}
+
+.input-field label {
+  color: var(--imput-color);
+  font-size: 1.25rem;
+}
+
+.input-field input[type='number'].valid {
+  border-bottom: 1px solid var(--valid-imput-color);
+  box-shadow: 0 1px 0 0 var(--valid-imput-color);
+}
+
+.input-field input[type='number'].invalid {
+  border-bottom: 1px solid var(--invalid-imput-color);
+  box-shadow: 0 1px 0 0 var(--invalid-imput-color);
+}
+
+[type='radio']:not(:checked) + span,
+[type='radio']:checked + span {
+  color: var(--imput-color);
+  font-size: 1.25rem;
+}
+
+[type='radio']:checked + span:after,
+[type='radio'].with-gap:checked + span:before,
+[type='radio'].with-gap:checked + span:after {
+  border: 2px solid var(--valid-imput-color);
+}
+
+[type='radio']:checked + span:after,
+[type='radio'].with-gap:checked + span:after {
+  background-color: var(--valid-imput-color);
 }
